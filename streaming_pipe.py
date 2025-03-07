@@ -1,8 +1,6 @@
 from pyspark.sql.functions import col
 from pyspark.sql.types import StructType, StructField, StringType, DoubleType
-import logging
 
-logger = logging.getLogger(__name__)
 
 schema = StructType(
     [
@@ -36,6 +34,6 @@ query = (
     )  # <-- En vez de .start("ruta...")
 )
 
-logger.info("Iniciando el proceso de streaming")
+print("Iniciando el proceso de streaming")
 
 query.awaitTermination()
